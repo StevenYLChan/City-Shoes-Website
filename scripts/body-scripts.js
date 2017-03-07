@@ -35,4 +35,17 @@ $(function(){
 
         });
     });
+
+    // $(".fa-facebook,.fa-twitter,.fa-google-plus,.fa-envelope").hover(function() {
+    //     $(this).addClass("fa-2x");
+    // },
+    //     function(){
+    //         $(this).removeClass("fa-2x");
+    //     });
+    //     //     $(this).stop().animate({ fontSize : '20px' });
+    //     // },
+    //     // function() {
+    //     //     $(this).stop().animate({ fontSize : '14px' });
+    //     // });
+
 });

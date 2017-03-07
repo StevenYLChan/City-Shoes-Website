@@ -179,14 +179,6 @@ span.glyphicon-menu-hamburger{
     text-align: center;
 }
 
-footer{
-    background-color: #333;
-    color: #ddd;
-    padding: 20px;
-    text-align: center;
-    min-height: 50px;
-}
-
 .carousel-control.left, .carousel-control.right {
     background: none !important;
     /*filter: progid: none !important;*/
@@ -197,5 +189,46 @@ footer{
 }
 .carousel:hover .carousel-control {
     visibility: visible;
+}
+
+footer{
+    /*background-color: #333;*/
+    background-color: #0c953b;
+    color: #ddd;
+    padding: 20px;
+    text-align: center;
+    min-height: 50px;
+    max-height: 50px;
+}
+
+.fbook-glyph  a:hover {
+    color: #3b5998;
+    /*font-size: 1.1em;*/
+    text-decoration: none;
+}
+.twitter-glyph  a:hover {
+    color: #00aced;
+    /*font-size: 1.5em;*/
+    text-decoration: none;
+}
+.googleplus-glyph  a:hover {
+     color: #d34836;
+     /*font-size: 1.5em;*/
+     text-decoration: none;
+}
+.mail-glyph  a:hover {
+      color: white;
+      /*font-size: 1.1em;*/
+      text-decoration: none;
+}
+
+.footer-glyphs{
+
+}
+
+.footer-glyphs a{
+    color: inherit;
+    padding: 10px;
+    text-decoration: none;
 }
 
