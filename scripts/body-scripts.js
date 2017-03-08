@@ -1,3 +1,7 @@
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
+
 $(function(){
     $(window).on("load resize", function(){
         $(".fill-screen").css("height",window.innerHeight);
@@ -5,7 +9,7 @@ $(function(){
 
     $('body').scrollspy({
         target: '.navbar',
-        offset: 160
+        offset: 120
     });
 
     $('nav a, .down-button a').bind('click',function(){
