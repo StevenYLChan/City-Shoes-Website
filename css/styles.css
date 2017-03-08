@@ -217,11 +217,10 @@ footer{
      text-decoration: none;
 }
 .mail-glyph  a:hover {
-      color: white;
+      color: #FFC400;
       /*font-size: 1.1em;*/
       text-decoration: none;
 }
-
 .footer-glyphs{
 
 }
@@ -231,4 +230,3 @@ footer{
     padding: 10px;
     text-decoration: none;
 }
-

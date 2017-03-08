@@ -9,13 +9,13 @@ $(function(){
 
     $('body').scrollspy({
         target: '.navbar',
-        offset: 120
+        offset: 105
     });
 
     $('nav a, .down-button a').bind('click',function(){
     	$('html, body').stop().animate({
     		scrollTop: $($(this).attr('href')).offset().top -100
-    	}, 1500, 'easeInOutExpo');
+    	}, 1000, 'easeInOutExpo');
     	event.preventDefault();
     	});
 
@@ -24,7 +24,7 @@ $(function(){
     new WOW().init();
 
     $(document).ready(function () {
-        $("#nanoGallery3").nanoGallery({
+        $("#imageGallery").nanoGallery({
 
                 thumbnailHeight: 250,
                 colorScheme: 'light',
@@ -51,5 +51,10 @@ $(function(){
     //     // function() {
     //     //     $(this).stop().animate({ fontSize : '14px' });
     //     // });
-
-});
+    $(".fa-chevron-circle-down").hover(function() {
+        $(this).stop().animate({fontSize: '60px'}, 100)
+    },
+        function(){
+        $(this).stop().animate({ fontSize: '56px'}, 100)
+        })
+    });
