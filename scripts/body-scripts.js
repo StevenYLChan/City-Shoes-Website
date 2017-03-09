@@ -60,6 +60,7 @@ $(function () {
             $(this).stop().animate({fontSize: '56px'}, 100)
         });
 
+    $('[data-toggle="tooltip"]').tooltip()
 
 });
 
@@ -83,27 +84,56 @@ var checkIfOpen = function(){
     if (['monday', 'tuesday', 'wednesday', 'friday'].indexOf(dayOfWeek) >= 0) {
         if (timeOfDay>=10 && timeOfDay<=18){
             bootstrap_alert.warning('<strong>Open!</strong> Come and visit us!', 'success', 4000);
+            $("#openHoursIndicator-open")
+                .css("display", "''");
+            $("#openHoursIndicator-closed")
+                .css("display", "none");
+
         }
         else{
             bootstrap_alert.warning('<strong>Closed!</strong> Sorry, we are currently closed.', 'warning', 4000);
+            $("#openHoursIndicator-open")
+                .css("display", "none");
+            $("#openHoursIndicator-closed")
+                .css("display", "''");
         }
 
     }else if (['thursday'].indexOf(dayOfWeek) >= 0){
         if (timeOfDay>=10 && timeOfDay<=19){
             bootstrap_alert.warning('<strong>Open!</strong> Come and visit us!', 'success', 4000);
+            $("#openHoursIndicator-open")
+                .css("display", "''");
+            $("#openHoursIndicator-closed")
+                .css("display", "none");
         }
         else{
             bootstrap_alert.warning('<strong>Closed!</strong> Sorry, we are currently closed.', 'warning', 4000);
+            $("#openHoursIndicator-open")
+                .css("display", "none");
+            $("#openHoursIndicator-closed")
+                .css("display", "''");
         }
     }else if (['saturday'].indexOf(dayOfWeek) >= 0){
         if (timeOfDay>=10 && timeOfDay<=17){
             bootstrap_alert.warning('<strong>Open!</strong> Come and visit us!', 'success', 4000);
+            $("#openHoursIndicator-open")
+                .css("display", "''");
+            $("#openHoursIndicator-closed")
+                .css("display", "none");
         }
         else{
             bootstrap_alert.warning('<strong>Closed!</strong> Sorry, we are currently closed.', 'warning', 4000);
+            $("#openHoursIndicator-open")
+                .css("display", "none");
+            $("#openHoursIndicator-closed")
+                .css("display", "''");
         }
     }else if (['sunday'].indexOf(dayOfWeek) >= 0){
         bootstrap_alert.warning('<strong>Closed!</strong> Sorry, we are currently closed.', 'warning', 4000);
+        $("#openHoursIndicator-open")
+            .css("display", "none");
+        $("#openHoursIndicator-closed")
+            .css("display", "''");
     }
 };
 

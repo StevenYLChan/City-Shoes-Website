@@ -235,3 +235,23 @@ footer{
     padding: 10px;
     text-decoration: none;
 }
+
+.fa-toggle-on{
+    color: #00E676;
+}
+
+.fa-toggle-off{
+    color: #FF3D00;
+}
+
+.container-beside-map{
+    min-height: 250px;
+    max-height: 250px;
+}
+.contactNumbers{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+}
