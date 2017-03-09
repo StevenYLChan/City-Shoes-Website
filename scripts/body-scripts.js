@@ -25,7 +25,7 @@ $(function () {
 
     var myCS= { thumbnail : { borderColor: '#ffffff' } };
     jQuery(document).ready(function () {
-        jQuery("#imageGallery").nanogallery2({
+        jQuery(".imageGallery").nanogallery2({
 
             thumbnailHeight: 250,
             thumbnailHoverEffect2: {name: 'scale120', duration: 100},
