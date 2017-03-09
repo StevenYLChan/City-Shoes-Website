@@ -38,6 +38,8 @@ $(function () {
             colorScheme: myCS
 
         });
+
+
     });
 
     // $(".fa-facebook,.fa-twitter,.fa-google-plus,.fa-envelope").hover(function() {
@@ -56,7 +58,56 @@ $(function () {
         },
         function () {
             $(this).stop().animate({fontSize: '56px'}, 100)
-        })
+        });
+
+
 });
 
-console.log = function(){};
+bootstrap_alert = function () {};
+bootstrap_alert.warning = function (message, alert, timeout) {
+    $('<div id="storeOpenAlert" class="alert alert-' + alert + ' fade in alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'
+        + message + '</div>').appendTo('body');
+    setTimeout(function () {
+        $(".alert").alert('close');
+    }, timeout);
+};
+//console.log = function(){};
+var checkIfOpen = function(){
+    var myDate = new Date();
+    moment.tz.setDefault("America/Edmonton");
+    console.log(moment.tz(myDate, "America/Edmonton").format('dddd HH:mm'));
+
+    var dayOfWeek = moment.tz(myDate, "America/Edmonton").format('dddd').toLowerCase();
+    var timeOfDay = moment.tz(myDate, "America/Edmonton").format('HH');
+
+    if (['monday', 'tuesday', 'wednesday', 'friday'].indexOf(dayOfWeek) >= 0) {
+        if (timeOfDay>=10 && timeOfDay<=18){
+            bootstrap_alert.warning('<strong>Open!</strong> Come and visit us!', 'success', 4000);
+        }
+        else{
+            bootstrap_alert.warning('<strong>Closed!</strong> Sorry, we are currently closed.', 'warning', 4000);
+        }
+
+    }else if (['thursday'].indexOf(dayOfWeek) >= 0){
+        if (timeOfDay>=10 && timeOfDay<=19){
+            bootstrap_alert.warning('<strong>Open!</strong> Come and visit us!', 'success', 4000);
+        }
+        else{
+            bootstrap_alert.warning('<strong>Closed!</strong> Sorry, we are currently closed.', 'warning', 4000);
+        }
+    }else if (['saturday'].indexOf(dayOfWeek) >= 0){
+        if (timeOfDay>=10 && timeOfDay<=17){
+            bootstrap_alert.warning('<strong>Open!</strong> Come and visit us!', 'success', 4000);
+        }
+        else{
+            bootstrap_alert.warning('<strong>Closed!</strong> Sorry, we are currently closed.', 'warning', 4000);
+        }
+    }else if (['sunday'].indexOf(dayOfWeek) >= 0){
+        bootstrap_alert.warning('<strong>Closed!</strong> Sorry, we are currently closed.', 'warning', 4000);
+    }
+};
+
+checkIfOpen();
+
+
+

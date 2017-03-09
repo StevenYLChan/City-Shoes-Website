@@ -103,6 +103,11 @@ span.glyphicon-menu-hamburger{
     background-position: center;
 }
 
+#storeOpenAlert{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
 .title-row{
     position: relative;
     min-height: 300px;
