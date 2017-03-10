@@ -257,3 +257,30 @@ footer{
 }
 
 .center-block {float: none !important}
+
+.nav-tabs > li > a{
+    color:#000000;
+}
+
+.nav-tabs > li > a:hover{
+    background-color: #0c953b !important;
+    border: medium none;
+    border-radius: 0;
+    color:#fff;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus{
+    background-color:#0c953b;
+    color:#fff;
+}
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display: inline;     /* for IE7*/
+    *zoom:1;              /* for IE7*/
+}
+.nav-tabs {
+    text-align:center;
+}
