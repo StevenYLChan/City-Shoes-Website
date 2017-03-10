@@ -203,7 +203,7 @@ footer{
     padding: 20px;
     text-align: center;
     min-height: 50px;
-    max-height: 50px;
+    /*max-height: 50px;*/
 }
 
 .fbook-glyph  a:hover {
