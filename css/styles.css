@@ -237,12 +237,9 @@ footer{
 }
 
 .fa-toggle-on{
-    color: #00E676;
+    color: #00897B;
 }
 
-.fa-toggle-off{
-    color: #FF3D00;
-}
 
 .container-beside-map{
     min-height: 250px;
@@ -283,4 +280,8 @@ footer{
 }
 .nav-tabs {
     text-align:center;
+}
+
+.btn{
+    border:0px solid transparent; /* this was 1px earlier */
 }
