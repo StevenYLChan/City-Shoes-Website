@@ -1,8 +1,8 @@
 $(window).scroll(function() {
     var y_scroll_pos = window.pageYOffset;
-    var scroll_pos_test = 300;
+    var scroll_pos_init = 300;
 
-    if(y_scroll_pos >= scroll_pos_test) {
+    if(y_scroll_pos >= scroll_pos_init) {
         $("#top-nav-id")
             .css({opacity: 0.7})
             .mouseenter(function () {

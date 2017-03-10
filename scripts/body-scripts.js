@@ -2,67 +2,7 @@ window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 };
 
-$(function () {
-    $(window).on("load resize", function () {
-        $(".fill-screen").css("height", window.innerHeight);
-    });
-
-    $('body').scrollspy({
-        target: '.navbar',
-        offset: 105
-    });
-
-    $('nav a, .down-button a').bind('click', function () {
-        $('html, body').stop().animate({
-            scrollTop: $($(this).attr('href')).offset().top - 100
-        }, 1000, 'easeInOutExpo');
-        event.preventDefault();
-    });
-
-    $(window).stellar();
-
-    new WOW().init();
-
-    var myCS= { thumbnail : { borderColor: '#ffffff' } };
-    jQuery(document).ready(function () {
-        jQuery(".imageGallery").nanogallery2({
-
-            thumbnailHeight: 250,
-            thumbnailHoverEffect2: {name: 'scale120', duration: 100},
-            thumbnailGutterWidth: 0,
-            thumbnailGutterHeight: 0,
-            thumbnailLabel: {display: false, position: 'overImageOnMiddle', align: 'center'},
-            thumbnailOpenImage: false,
-            thumbnailBorderHorizontal: 1,
-            thumbnailBorderVertical: 1,
-            colorScheme: myCS
-
-        });
-
-
-    });
-
-    // $(".fa-facebook,.fa-twitter,.fa-google-plus,.fa-envelope").hover(function() {
-    //     $(this).addClass("fa-2x");
-    // },
-    //     function(){
-    //         $(this).removeClass("fa-2x");
-    //     });
-    //     //     $(this).stop().animate({ fontSize : '20px' });
-    //     // },
-    //     // function() {
-    //     //     $(this).stop().animate({ fontSize : '14px' });
-    //     // });
-    $(".fa-chevron-circle-down").hover(function () {
-            $(this).stop().animate({fontSize: '60px'}, 100)
-        },
-        function () {
-            $(this).stop().animate({fontSize: '56px'}, 100)
-        });
-
-    $('[data-toggle="tooltip"]').tooltip()
-
-});
+console.log = function(){};
 
 bootstrap_alert = function () {};
 bootstrap_alert.warning = function (message, alert, timeout) {
@@ -72,11 +12,11 @@ bootstrap_alert.warning = function (message, alert, timeout) {
         $(".alert").alert('close');
     }, timeout);
 };
-//console.log = function(){};
+
 var checkIfOpen = function(){
     var myDate = new Date();
     moment.tz.setDefault("America/Edmonton");
-    console.log(moment.tz(myDate, "America/Edmonton").format('dddd HH:mm'));
+    //console.log(moment.tz(myDate, "America/Edmonton").format('dddd HH:mm'));
 
     var dayOfWeek = moment.tz(myDate, "America/Edmonton").format('dddd').toLowerCase();
     var timeOfDay = moment.tz(myDate, "America/Edmonton").format('HH');
@@ -138,9 +78,66 @@ var checkIfOpen = function(){
     }
 };
 
-checkIfOpen();
+$(function () {
+    $(window).stellar();
+    new WOW().init();
 
+    $(window).on("load resize", function () {
+        $(".fill-screen").css("height", window.innerHeight);
+    });
 
-$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-    var target = $(e.target).attr("href");
+    $('body').scrollspy({
+        target: '.navbar',
+        offset: 105
+    });
+
+    $(".fa-chevron-circle-down").hover(function () {
+            $(this).stop().animate({fontSize: '60px'}, 100)
+        },
+        function () {
+            $(this).stop().animate({fontSize: '56px'}, 100)
+        });
+
+    $('nav a, .down-button a').bind('click', function () {
+        $('html, body').stop().animate({
+            scrollTop: $($(this).attr('href')).offset().top - 100
+        }, 1000, 'easeInOutExpo');
+        event.preventDefault();
+    });
+
+    $('.carousel').carousel({
+        interval: 3000,
+        pause: null
+    });
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        var target = $(e.target).attr("href");
+    });
+
+    var csTheme= { thumbnail : { borderColor: '#ffffff' } };
+    jQuery(document).ready(function () {
+        jQuery(".imageGallery").nanogallery2({
+
+            thumbnailHeight: 250,
+            thumbnailHoverEffect2: {name: 'scale120', duration: 100},
+            thumbnailGutterWidth: 0,
+            thumbnailGutterHeight: 0,
+            thumbnailLabel: {display: false, position: 'overImageOnMiddle', align: 'center'},
+            thumbnailOpenImage: false,
+            thumbnailBorderHorizontal: 1,
+            thumbnailBorderVertical: 1,
+            colorScheme: csTheme
+        });
+    });
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    checkIfOpen();
 });
+
+
+
+
+
+
+
