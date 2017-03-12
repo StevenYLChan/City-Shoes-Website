@@ -2,9 +2,11 @@ window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 };
 
-console.log = function(){};
+console.log = function () {
+};
 
-bootstrap_alert = function () {};
+bootstrap_alert = function () {
+};
 bootstrap_alert.warning = function (message, alert, timeout) {
     $('<div id="storeOpenAlert" class="alert alert-' + alert + ' fade in alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'
         + message + '</div>').appendTo('body');
@@ -13,7 +15,7 @@ bootstrap_alert.warning = function (message, alert, timeout) {
     }, timeout);
 };
 
-var checkIfOpen = function(){
+var checkIfOpen = function () {
     var myDate = new Date();
     moment.tz.setDefault("America/Edmonton");
     //console.log(moment.tz(myDate, "America/Edmonton").format('dddd HH:mm'));
@@ -21,10 +23,10 @@ var checkIfOpen = function(){
     var dayOfWeek = moment.tz(myDate, "America/Edmonton").format('dddd').toLowerCase();
     var timeOfDay = moment.tz(myDate, "America/Edmonton").format('HH');
 
-    $('#'+dayOfWeek+'HoursLine').css("font-weight","bold");
+    $('#' + dayOfWeek + 'HoursLine').css("font-weight", "bold");
 
     if (['monday', 'tuesday', 'wednesday', 'friday'].indexOf(dayOfWeek) >= 0) {
-        if (timeOfDay>=10 && timeOfDay<=18){
+        if (timeOfDay >= 10 && timeOfDay <= 18) {
             bootstrap_alert.warning('We are <strong>open</strong> right now! Come and visit us!', 'success', 4000);
             $("#openHoursIndicator-open")
                 .css("display", "''");
@@ -32,44 +34,44 @@ var checkIfOpen = function(){
                 .css("display", "none");
 
         }
-        else{
+        else {
             bootstrap_alert.warning('Sorry, we are currently<strong> closed.</strong>', 'warning', 4000);
             $("#openHoursIndicator-open")
                 .css("display", "none");
             $("#openHoursIndicator-closed")
                 .css("display", "''");
         }
-    }else if (['thursday'].indexOf(dayOfWeek) >= 0){
-        if (timeOfDay>=10 && timeOfDay<=19){
+    } else if (['thursday'].indexOf(dayOfWeek) >= 0) {
+        if (timeOfDay >= 10 && timeOfDay <= 19) {
             bootstrap_alert.warning('We are <strong>open</strong> right now! Come and visit us!', 'success', 4000);
             $("#openHoursIndicator-open")
                 .css("display", "''");
             $("#openHoursIndicator-closed")
                 .css("display", "none");
         }
-        else{
+        else {
             bootstrap_alert.warning('Sorry, we are currently<strong> closed.</strong>', 'warning', 4000);
             $("#openHoursIndicator-open")
                 .css("display", "none");
             $("#openHoursIndicator-closed")
                 .css("display", "''");
         }
-    }else if (['saturday'].indexOf(dayOfWeek) >= 0){
-        if (timeOfDay>=10 && timeOfDay<=17){
+    } else if (['saturday'].indexOf(dayOfWeek) >= 0) {
+        if (timeOfDay >= 10 && timeOfDay <= 17) {
             bootstrap_alert.warning('We are <strong>open</strong> right now! Come and visit us!', 'success', 4000);
             $("#openHoursIndicator-open")
                 .css("display", "''");
             $("#openHoursIndicator-closed")
                 .css("display", "none");
         }
-        else{
+        else {
             bootstrap_alert.warning('Sorry, we are currently<strong> closed.</strong>', 'warning', 4000);
             $("#openHoursIndicator-open")
                 .css("display", "none");
             $("#openHoursIndicator-closed")
                 .css("display", "''");
         }
-    }else if (['sunday'].indexOf(dayOfWeek) >= 0){
+    } else if (['sunday'].indexOf(dayOfWeek) >= 0) {
         bootstrap_alert.warning('Sorry, we are currently<strong> closed.</strong>', 'warning', 4000);
         $("#openHoursIndicator-open")
             .css("display", "none");
@@ -114,21 +116,20 @@ $(function () {
         var target = $(e.target).attr("href");
     });
 
-    var csTheme= { thumbnail : { borderColor: '#ffffff' } };
-    jQuery(document).ready(function () {
-        jQuery(".imageGallery").nanogallery2({
+    var csTheme = {thumbnail: {borderColor: '#ffffff'}};
 
-            thumbnailHeight: 250,
-            thumbnailHoverEffect2: {name: 'scale120', duration: 100},
-            thumbnailGutterWidth: 0,
-            thumbnailGutterHeight: 0,
-            thumbnailLabel: {display: false, position: 'overImageOnMiddle', align: 'center'},
-            thumbnailOpenImage: false,
-            thumbnailBorderHorizontal: 1,
-            thumbnailBorderVertical: 1,
-            colorScheme: csTheme
-        });
+    $(".imageGallery").nanogallery2({
+        thumbnailHeight: 250,
+        thumbnailHoverEffect2: {name: 'scale120', duration: 100},
+        thumbnailGutterWidth: 0,
+        thumbnailGutterHeight: 0,
+        thumbnailLabel: {display: false, position: 'overImageOnMiddle', align: 'center'},
+        thumbnailOpenImage: false,
+        thumbnailBorderHorizontal: 1,
+        thumbnailBorderVertical: 1,
+        colorScheme: csTheme
     });
+
 
     $('[data-toggle="tooltip"]').tooltip();
 
