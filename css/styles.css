@@ -313,3 +313,28 @@ footer{
 /*
 Footer END
 */
+#womens-cover{
+    background-image: url(../images/banner-background-wallpaper-images/womens.png);
+}
+
+#mens-cover{
+    background-image: url(../images/banner-background-wallpaper-images/mens.png);
+}
+
+#about-cover{
+    background-image: url(../images/banner-background-wallpaper-images/about.png);
+}
+
+@media (max-width: 767px) {
+    #womens-cover{
+        background-image: url(../images/banner-background-wallpaper-images/womens-scaled.png);
+    }
+    #mens-cover{
+        background-image: url(../images/banner-background-wallpaper-images/mens-scaled.png);
+    }
+    #about-cover{
+        background-image: url(../images/banner-background-wallpaper-images/about-scaled.png);
+    }
+
+}
+
